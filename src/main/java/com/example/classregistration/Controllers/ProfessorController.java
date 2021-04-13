@@ -23,16 +23,19 @@ public class ProfessorController {
 
     @PostMapping("/professors")
     public Professor createProfessor(@RequestBody Professor professor) {
+        //create a new professor with the data in the body
         return professorRepository.save(professor);
     }
 
     @GetMapping("/professors")
     public List<Professor> getAllProfessors(){
+        //return all professors in a list
         return professorRepository.findAll();
     }
 
     @GetMapping("/professors/{id}")
     public ResponseEntity<Professor> getEmployeeById(@PathVariable(value = "id") Integer professorId) throws ResourceNotFoundException {
+        //find professor using given id and trow a resource not found exception if no professor with the given id is found
         Professor professor = professorRepository.findById(professorId)
                 .orElseThrow(() -> new ResourceNotFoundException("Professor not found for this id :: " + professorId));
         return ResponseEntity.ok().body(professor);
