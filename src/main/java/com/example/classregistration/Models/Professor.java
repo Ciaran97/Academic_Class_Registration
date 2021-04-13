@@ -21,14 +21,6 @@ public class Professor {
     @Column(name = "Surname", nullable = false)
     private String Surname;
 
-    public Date getDate_Of_Birth() {
-        return date_Of_Birth;
-    }
-
-    public void setDate_Of_Birth(Date date_Of_Birth) {
-        this.date_Of_Birth = date_Of_Birth;
-    }
-
     @Column(name = "date_of_birth", nullable = false)
     private Date date_Of_Birth;
 
@@ -54,6 +46,13 @@ public class Professor {
         Id = id;
     }
 
+    public Date getDate_Of_Birth() {
+        return date_Of_Birth;
+    }
+
+    public void setDate_Of_Birth(Date date_Of_Birth) {
+        this.date_Of_Birth = date_Of_Birth;
+    }
 
     public String getName() {
         return Name;
