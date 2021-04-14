@@ -14,6 +14,8 @@
 	<name>GenesysClassRegistration</name>
 	<description>Class registration system REST API</description>
 	<properties>
+		<start-class>com.example.classregistration.GenesysClassRegistrationApplication</start-class>
+
 		<java.version>16</java.version>
 	</properties>
 	<dependencies>
@@ -52,6 +54,22 @@
 			<groupId>xml-apis</groupId>
 			<artifactId>xml-apis</artifactId>
 			<version>1.3.04</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>RELEASE</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
