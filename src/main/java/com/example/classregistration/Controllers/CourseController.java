@@ -28,25 +28,18 @@ public class CourseController {
     @PostMapping("/courses")
     public Course createCourse(@RequestBody Course course){
         //create a new course with the data in the body
-       // return courseRepository.save(course);
         return courseService.createCourse(course);
     }
 
     @PostMapping("/courses/{id}")
     public Course createCourseById(@RequestBody Course course, @PathVariable(value = "id") Integer id){
         //create a new course with the data in the body
-        /*
-        Professor professor = professorRepository.findById(id).orElseThrow();
-        course.setProfessor(professor);
-        return courseRepository.save(course);
 
-        */
         return courseService.createCourseByProfId(course, id);
     }
 
     @GetMapping("/courses")
     public List<Course> getAllCourses(){
-       // return courseRepository.findAll();
         return courseService.getAllCourses();
     }
 
