@@ -1,18 +1,15 @@
 package com.example.classregistration.Models;
 
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Professors")
 public class Professor {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
 
     @Column(name = "Name", nullable = false)
@@ -24,11 +21,13 @@ public class Professor {
     @Column(name = "date_of_birth", nullable = false)
     private Date date_Of_Birth;
 
-    public Professor(String Name, String Surname, Date date_Of_Birth){
-        super();
+ //   @OneToMany(mappedBy = "professor", fetch = FetchType.EAGER)
+   // private List<Course> courses;
 
-        this.Name = Name;
-        this.Surname = Surname;
+
+    public Professor(String name, String surname, Date date_Of_Birth) {
+        Name = name;
+        Surname = surname;
         this.date_Of_Birth = date_Of_Birth;
     }
 
@@ -36,23 +35,6 @@ public class Professor {
     super();
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer getId() {
-        return Id;
-    }
-
-    public void setId(Integer id) {
-        Id = id;
-    }
-
-    public Date getDate_Of_Birth() {
-        return date_Of_Birth;
-    }
-
-    public void setDate_Of_Birth(Date date_Of_Birth) {
-        this.date_Of_Birth = date_Of_Birth;
-    }
 
     public String getName() {
         return Name;
@@ -68,6 +50,26 @@ public class Professor {
 
     public void setSurname(String surname) {
         Surname = surname;
+    }
+
+    public Date getDate_Of_Birth() {
+        return date_Of_Birth;
+    }
+
+    public void setDate_Of_Birth(Date date_Of_Birth) {
+        this.date_Of_Birth = date_Of_Birth;
+    }
+
+  //  public List<Course> getCourses() {
+   //     return courses;
+   // }
+
+    public Integer getId() {
+        return Id;
+    }
+
+    public void setId(Integer id) {
+        Id = id;
     }
 
     @Override
